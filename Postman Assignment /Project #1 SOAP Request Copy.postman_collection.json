@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "d75fbb24-2af8-49fc-a7e0-b643852fff78",
+		"name": "Project #1 SOAP Request Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "611814"
+	},
+	"item": [
+		{
+			"name": "SOAP Number to Words",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Test cases",
+							"// We can verify that 200 Ok should come TC#1",
+							"",
+							"pm.test(\"TC#1 - Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// TC #2 - BODY - five hundred and one",
+							"// TC #3 - m:NumberToWordsResponse SHOULD BE PRESENT",
+							"// TC #4 - Header Response should be text/xml",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "ABC",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n <soap:Body>\n  <NumberToWords xmlns=\"http://www.dataaccess.com/webservicesserver/\">\n      <ubiNum>501</ubiNum>\n    </NumberToWords>\n  </soap:Body>\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.dataaccess.com/webservicesserver/NumberConversion.wso",
+					"protocol": "https",
+					"host": [
+						"www",
+						"dataaccess",
+						"com"
+					],
+					"path": [
+						"webservicesserver",
+						"NumberConversion.wso"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

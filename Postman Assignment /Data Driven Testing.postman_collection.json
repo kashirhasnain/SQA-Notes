@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "70e767c6-7ad3-4b8e-a5cb-6f69638df7d8",
+		"name": "Data Driven Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "611814"
+	},
+	"item": [
+		{
+			"name": "DDT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Id should not be Null\", function(){",
+							"",
+							"    console.log(\"Collection Level POST\");",
+							"",
+							"    ",
+							"           pm.expect(pm.response.json().id).not.eql(null);",
+							"           var Expectedem = pm.iterationData.get(\"email\");",
+							"           var pass = pm.iterationData.get(\"password\");",
+							"           console.log(em);",
+							"           console.log(pass);",
+							"",
+							"",
+							"           var actualEmail = pm.response.json().email;",
+							"           pm.expect(actualEmail).to.be.eq(Expectedem);",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"console.log(\"Collection Level\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \"email\" : \"{{email}}\",\n     \"password\" : \"{{password}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/register/preprod",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"register",
+						"preprod"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"console.log(\"Collection Level Pre\");"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"console.log(\"Collection Level POST\");"
+				]
+			}
+		}
+	]
+}

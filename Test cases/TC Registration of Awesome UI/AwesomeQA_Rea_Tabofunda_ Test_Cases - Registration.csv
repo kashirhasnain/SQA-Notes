@@ -1,0 +1,608 @@
+,Test Case Template for Project,,,,,,,,,,
+,Project Name,AwesomeQA,,,,,,,,,
+,Module Name,Registration,,,,,,,,,
+,Created By ,Rea Tabofunda,,,,,,,,,
+,Created Date,10/14/2023,,,,,,,,,
+,Peer Review By,,,,,,,,,,
+,Peer Reviewed Date,,,,,,,,,,
+Scenario TID, Scenario Desciption,Test Case ID,Pre Condition,Steps to Execute,Test Data,PRIORITY,Expected Result,Actual Result,Status,Executed QA Name ,Misc (Comments)
+,Registration successful with valid credentials,TC1,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter valid credentials on all required fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check",High,User successfully registered an account,Login is working with Valid CREDENTIALS,Pass,Rea,
+,Registration successful with valid credentials using ENTER key,TC2,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter valid credentials on all required fields
+3. Click on ENTER or RETURN key on keyboard","First Name: Rea
+Last Name: Tab
+E-mail: rtester3691@gmail.com
+Telephone: 408-123-4568
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check",Medium,User successfully registered an account,,Ready to test,,
+First Name,Registration successful with min of 1 character  for First Name Field,TC3,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter valid credentials on all required fields
+3. Click on the  Continue button","First Name: R
+Last Name: Tab
+E-mail: rtester3691@gmail.com
+Telephone: 408-123-4568
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check",Medium,User successfully registered an account,,Ready to test,,
+,Registration successful with Alphanumeric and special characters  for First Name Field,TC4,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter valid credentials on all required fields
+3. Click on the  Continue button","First Name: R2a
+Last Name: Tab
+E-mail: rtester3691@gmail.com
+Telephone: 408-123-4568
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check",Medium,User successfully registered an account,,Ready to test,,
+,Registration successful with max of 32 characters  for First Name Field,TC5,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valide email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter valid credentials on all required fields
+3. Click on the  Continue button","First Name: Radajerushskwarnjwhewjhakfijreqa
+Last Name: Tab
+E-mail: rtester3691@gmail.com
+Telephone: 408-123-4568
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check",Medium,User successfully registered an account,,Ready to test,,
+,Registration failed with 33 characters  for  First Name Field,TC6,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on all required fields
+3. Click on the  Continue button","First Name: Radajerushskwarnjwhewjhakfijreqad
+Last Name: Tab
+E-mail: rtester3691@gmail.com
+Telephone: 408-123-4568
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check",Medium,User cannot register an account,,Ready to test,,
+,Registration successful white spaces on First Name field,TC7,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on all required fields
+3. Click on the  Continue button","First Name: Rea Ann
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check",Medium,User successfully registered an account,,Ready to test,,
+,Registration failed with Blank First Name,TC8,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields except the First Name
+3. Click on the  Continue button","First Name: 
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check",Medium,User cannot register an account,,Ready to test,,
+,Verify error message is correct,TC9,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","First Name: 
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check",Medium,"Error Message showing ""First Name must be between 1 and 32 characters!""",,Ready to test,,
+Last Name,Registration successful with min of 1 character  for Last Name Field,TC10,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter valid credentials on all required fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: T
+E-mail: rtester3691@gmail.com
+Telephone: 408-123-4568
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check",Medium,User successfully registered an account,,Ready to test,,
+,Registration successful with Alphanumeric and special characters  for  Last Name Field,TC11,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter valid credentials on all required fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab23
+E-mail: rtester3691@gmail.com
+Telephone: 408-123-4568
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check",Medium,User successfully registered an account,,Ready to test,,
+,Registration successful with max of 32 characters  for  Last Name Field,TC12,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valide email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter valid credentials on all required fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tadajerushskwarnjwhewjhakfijreqa
+E-mail: rtester3691@gmail.com
+Telephone: 408-123-4568
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check",Medium,User successfully registered an account,,Ready to test,,
+,Registration failed with 32 characters  for  Last Name Field,TC13,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on all required fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tadajerushskwarnjwhewjhakfijreqad
+E-mail: rtester3691@gmail.com
+Telephone: 408-123-4568
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check",Medium,User cannot register an account,,Ready to test,,
+,Registration successful with white spaces on  Last Name field,TC14,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on all required fields
+3. Click on the  Continue button","First Name: Rea Ann
+Last Name: Tab Of
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check",Medium,User successfully registered an account,,Ready to test,,
+,Registration failed with Blank  Last Name,TC15,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields except Last Name
+3. Click on the  Continue button","First Name: Rea
+Last Name: 
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check",Medium,User cannot register an account,,Ready to test,,
+,Verify error message is correct,TC16,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: 
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check",Medium,"Error Message showing ""First Name must be between 1 and 32 characters!""",,Ready to test,,
+Email,Registration successful with valid email format,TC17,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check",Medium,User successfully registered an account,,Ready to test,,
+,Registration successful with Alphanumeric and special characters  for  Email Field,TC18,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check",Medium,User successfully registered an account,,Ready to test,,
+,Registration failed with white spaces on  Email field,TC19,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","""First Name: Rea
+Last Name: Tab
+E-mail: rtester369  @gmail.com
+Telephone: 408-123-4567
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check""",Medium,User cannot register an account,,Ready to test,,
+,Registration failed with Blank  Email,TC20,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields except Email field
+3. Click on the  Continue button","""First Name: Rea
+Last Name: Tab
+E-mail: 
+Telephone: 408-123-4567
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check""",Medium,User cannot register an account,,Ready to test,,
+,Verify error message is correct,TC21,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","""First Name: Rea
+Last Name: Tab
+E-mail: 
+Telephone: 408-123-4567
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check""",Medium,"Error Message showing ""E-Mail Address does not appear to be valid!""",,Ready to test,,
+Telephone,Registration successful with valid phone format,TC22,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check",High,User successfully registered an account,,Ready to test,,
+,Registration failed with Alphanumeric and special characters  for  Telephone Field,TC23,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","""First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-1!3-a@#$
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check""",High,User cannot register an account,,Ready to test,,
+,Registration successful with min of 3 characters  for  Last Name Field,TC24,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","""First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check""",Medium,User successfully registered an account,,,,
+,Registration failed with 2 characters  for  Telephone Field,TC25,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","""First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 40
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check""",Medium,User cannot register an account,,,,
+,Registration successful with max of 32 characters  for  Last Name Field,TC26,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","""First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 12312651254265654612563562356177
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check""",Medium,User successfully registered an account,,Ready to test,,
+,Registration failed with 33 characters  for  Telephone Field,TC27,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","""First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 123126512542656546125635623561772
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check""",Medium,User cannot register an account,,Ready to test,,
+,Registration failed with white spaces on  Telephone field,TC28,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-   4567
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check",Medium,User cannot register an account,,Ready to test,,
+,Registration failed with Blank  Telephone Field,TC29,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields except telephone field
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check",Medium,User cannot register an account,,Ready to test,,
+,Verify error message is correct,TC30,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check",Medium,"Error Message showing ""Telephone must be between 3 and 32 characters!""",,Ready to test,,
+Password,Registration successful with valid password,TC31,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check",Medium,User successfully registered an account,,Ready to test,,
+,Registration successful with Alphanumeric and special characters  for  Password Field,TC32,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: test123
+Confirm Password: test123
+Privacy Policy: Check",Medium,User successfully registered an account,,Ready to test,,
+,Registration successful with 4 characters  for Password Field,TC33,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: test
+Confirm Password: test123
+Privacy Policy: Check",Medium,User successfully registered an account,,Ready to test,,
+,Registration failed with 3 characters  for  Password Field,TC34,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: tes
+Confirm Password: test123
+Privacy Policy: Check",Medium,User cannot register an account,,Ready to test,,
+,Registration successful with max of 20 characters  for  Password Field,TC35,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: test1231265125426565
+Confirm Password: test123
+Privacy Policy: Check",Medium,User successfully registered an account,,Ready to test,,
+,Registration failed with 21 characters  for  Password Field,TC36,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: test12312651254265651
+Confirm Password: test123
+Privacy Policy: Check",Medium,User cannot register an account,,Ready to test,,
+,Registration failed with white spaces on  Password field,TC37,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: test  123
+Confirm Password: test123
+Privacy Policy: Check",Medium,User cannot register an account,,Ready to test,,
+,Registration failed with Blank  Password,TC38,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields except password
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: 
+Confirm Password: test123
+Privacy Policy: Check",Medium,User cannot register an account,,Ready to test,,
+,Verify error message is correct,TC39,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: 
+Confirm Password: test123
+Privacy Policy: Check",Medium,Correct error message is displayed,,Ready to test,,
+Confirm Password,Registration successful with matched confirm password,TC40,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password:  test123
+Confirm Password: test123
+Privacy Policy: Check",High,User successfully registered an account,,Ready to test,,
+,Registration failed with mismatched password & confirm password,TC41,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: test123
+Confirm Password: test12345
+Privacy Policy: Check",Medium,User cannot register an account,,Ready to test,,
+,Registration failed with white spaces on Confirm Password Field,TC42,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password:  test123
+Confirm Password: test   123
+Privacy Policy: Check",Medium,User cannot register an account,,Ready to test,,
+,Registration failed with Blank  Confirm Password Field,TC43,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields except confirm password
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: test123
+Confirm Password: 
+Privacy Policy: Check",Medium,User cannot register an account,,Ready to test,,
+,Verify error message is correct,TC44,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password:  test123
+Confirm Password: 
+Privacy Policy: Check",Medium,Correct error message is displayed,,Ready to test,,
+Newsletter,Registration successful if user choose Yes option for newsletter subscription,TC47,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: test123
+Confirm Password: test123
+Privacy Policy: Yes",Medium,User successfully registered an account,,Ready to test,,
+,Registration successful if user choose No option for newsletter subscription,TC48,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: test123
+Confirm Password: test123
+Privacy Policy: No",Medium,User cannot register an account,,Ready to test,,
+,User is not able to choose both Yes or No,TC49,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: test123
+Confirm Password: test123
+Privacy Policy: Yes & No",Medium,User cannot register an account,,Ready to test,,
+Privacy Policy,Registration successful if user click to agree with Private Policy,TC47,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: test123
+Confirm Password: test123
+Privacy Policy: Yes",Medium,User successfully registered an account,,Ready to test,,
+,Registration unsuccessful if user leaves  Private Policy box unchecked,TC48,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: test123
+Confirm Password: test123
+Privacy Policy: No",Medium,User cannot register an account,,Ready to test,,
+,Verify error message is correct,TC50,"https://awesomeqa.com/ui/index.php?route=account/register Page is loaded.
+
+
+User has a registered valid email","1. Navigate to https://awesomeqa.com/ui/index.php?route=account/register
+2. Enter credentials on the fields
+3. Click on the  Continue button","First Name: Rea
+Last Name: Tab
+E-mail: rtester369@gmail.com
+Telephone: 408-123-4567
+Password: test123
+Confirm Password: test123
+Privacy Policy: ",Medium,User cannot register an account,,Ready to test,,

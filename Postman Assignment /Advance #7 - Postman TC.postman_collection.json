@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "b94750cc-c116-4198-a35c-f08ee6027e46",
+		"name": "Advance #7 - Postman TC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "611814"
+	},
+	"item": [
+		{
+			"name": "TC",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Problem - Country has allowed variable - True",
+							"",
+							"pm.test(\"Verify that Country has allowed variable - True\",function(){",
+							"",
+							"        var jsonData = pm.response.json();",
+							"        var filters = jsonData[\"filters\"];",
+							"        console.log(filters);",
+							"",
+							"        var filtersNames = filters.map(function(items){",
+							"            return items.name;",
+							"        });",
+							"",
+							"        var countryFilterIndex = filtersNames.indexOf(\"COUNTRY\");",
+							"        console.log(filtersNames.indexOf(\"COUNTRY\"));",
+							"",
+							"        pm.expect(countryFilterIndex).to.exist;",
+							"",
+							"        var countryData = jsonData[\"filters\"][countryFilterIndex];",
+							"        console.log(countryData);",
+							"",
+							"        pm.expect(countryData[\"isAllowed\"]).to.be.true;",
+							"",
+							"",
+							"});",
+							"",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://c2d995f5-5f80-4671-85e6-f41a48e65714.mock.pstmn.io",
+					"protocol": "https",
+					"host": [
+						"c2d995f5-5f80-4671-85e6-f41a48e65714",
+						"mock",
+						"pstmn",
+						"io"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://c2d995f5-5f80-4671-85e6-f41a48e65714.mock.pstmn.io",
+							"protocol": "https",
+							"host": [
+								"c2d995f5-5f80-4671-85e6-f41a48e65714",
+								"mock",
+								"pstmn",
+								"io"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 19 Feb 2023 06:57:19 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "164"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-srv-trace",
+							"value": "v=1;t=c1cdde2af10b05d0"
+						},
+						{
+							"key": "x-srv-span",
+							"value": "v=1;s=a59a3b7d83bc27c7"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "120"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "119"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1676789898"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a4-7hO0T/XLq3TuFViTu2ZVQQdIY+A\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"companyId\": 10101,\n    \"regionId\": 36554,\n    \"filters\": [\n        {\n            \"id\": 101,\n            \"name\": \"VENDOR\",\n            \"isAllowed\": false\n        },\n        {\n            \"id\": 102,\n            \"name\": \"COUNTRY\",\n            \"isAllowed\": true\n        },\n        {\n            \"id\": 103,\n            \"name\": \"MANUFACTURER\",\n            \"isAllowed\": false\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}

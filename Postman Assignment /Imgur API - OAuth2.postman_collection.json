@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "046bcb3e-bd7f-4a60-806f-0209d1fed6f3",
+		"name": "Imgur API - OAuth2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "611814"
+	},
+	"item": [
+		{
+			"name": "Upload",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "queryParams",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "https://api.imgur.com/oauth2/token",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://api.imgur.com/oauth2/token",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "38fbae3679314af",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "3bfc9c68333e85c48e549328ae10d8602e49ee4a",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/pramod/Downloads/_a.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.imgur.com/3/upload",
+					"protocol": "https",
+					"host": [
+						"api",
+						"imgur",
+						"com"
+					],
+					"path": [
+						"3",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientSecret",
+							"value": "1824869262a3df3c7df3b54acd4a4b646cbad87e",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "bd61a21a3f26755",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://api.imgur.com/oauth2/token",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "https://api.imgur.com/oauth2/authorize",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "queryParams",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "gtoken",
+							"type": "string"
+						},
+						{
+							"key": "challengeAlgorithm",
+							"value": "S256",
+							"type": "string"
+						},
+						{
+							"key": "useBrowser",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://oauth.pstmn.io/v1/browser-callback",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Client-ID 38fbae3679314af",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://api.imgur.com/3/image/dw58gi9",
+					"protocol": "https",
+					"host": [
+						"api",
+						"imgur",
+						"com"
+					],
+					"path": [
+						"3",
+						"image",
+						"dw58gi9"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

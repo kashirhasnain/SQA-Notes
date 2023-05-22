@@ -1,0 +1,1285 @@
+{
+	"info": {
+		"_postman_id": "588ca8d5-510b-4794-8d92-d3cba9f919c3",
+		"name": "JavaScript Libraries",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "611814"
+	},
+	"item": [
+		{
+			"name": "Assertions , Expect . & Should",
+			"item": [
+				{
+					"name": "Advance Mock Demo & Assertion",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var expect = require('chai').expect;",
+									"pm.test(\"Test 01\",function(){",
+									"",
+									"       // ChaiJS",
+									"       // Another Name of Tea in India",
+									"        var foo = \"bar\";",
+									"        var arrayObject = {",
+									"                tea : [\"chai\",\"matcha\",\"oolong\"]",
+									"        };",
+									"        expect(foo).to.be.a(\"string\");",
+									"        expect(foo).to.equal(\"bar\");",
+									"        expect(foo).to.have.lengthOf(3);",
+									"",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/register/preprod",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"register",
+								"preprod"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Advance Demo",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://5a95033d-8b11-4507-94cc-0009c71bbf48.mock.pstmn.io",
+									"protocol": "https",
+									"host": [
+										"5a95033d-8b11-4507-94cc-0009c71bbf48",
+										"mock",
+										"pstmn",
+										"io"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 02 Aug 2022 03:42:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "x-srv-trace",
+									"value": "v=1;t=84a83a1fa4eaa722"
+								},
+								{
+									"key": "x-srv-span",
+									"value": "v=1;s=394852816b858d74"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "120"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "119"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1659411834"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a4-7hO0T/XLq3TuFViTu2ZVQQdIY+A\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"companyId\": 10101,\n    \"regionId\": 36554,\n    \"filters\": [\n        {\n            \"id\": 101,\n            \"name\": \"VENDOR\",\n            \"isAllowed\": false\n        },\n        {\n            \"id\": 102,\n            \"name\": \"COUNTRY\",\n            \"isAllowed\": true\n        },\n        {\n            \"id\": 103,\n            \"name\": \"MANUFACTURER\",\n            \"isAllowed\": false\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Advance Mock Demo & Assertion Full Code",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check the Country Filter, It should be isAllowed True\",function(){",
+									"",
+									"",
+									"     // Get the Response as JSON",
+									"     //  Get the Only Filters Array",
+									"     //  Use a Javascript Filters Fucntion to get the name of all Filters",
+									"     // indexOF in array JS Country",
+									"     // Match the isAllowed = true for that Index",
+									"    ",
+									"",
+									"     var jsonData  = pm.response.json();",
+									"     var filterArray = jsonData.filters;",
+									"     console.log(filterArray);",
+									"",
+									"    function filterByName(item){",
+									"        return item.name;",
+									"    }",
+									"",
+									"    function filterById(item){",
+									"        return item.id;",
+									"    }",
+									"",
+									"    function filterByIsAllowed(item){",
+									"        return item.isAllowed;",
+									"    }",
+									"",
+									"    console.log(filterByName());",
+									"",
+									"    var namesArray = filterArray.map(filterByName);",
+									"",
+									"    // var IdsArray = filterArray.map(filterById);",
+									"    // var ISAllowedArray = filterArray.map(filterByIsAllowed);",
+									"",
+									"    // console.log(namesArray);",
+									"    // console.log(IdsArray);",
+									"    // console.log(ISAllowedArray);",
+									"",
+									"    var indexOfCountry = namesArray.indexOf(\"COUNTRY\");",
+									"    console.log(indexOfCountry);",
+									"",
+									"      pm.expect(indexOfCountry).not.to.be.null;",
+									"      pm.expect(indexOfCountry).to.exist;",
+									"    // Country Exist in the Array",
+									"",
+									"",
+									"    console.log(filterArray[indexOfCountry][\"isAllowed\"]);",
+									"    pm.expect(filterArray[indexOfCountry][\"isAllowed\"]).to.equal(true);",
+									"",
+									"",
+									"});",
+									"",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://5a95033d-8b11-4507-94cc-0009c71bbf48.mock.pstmn.io",
+							"protocol": "https",
+							"host": [
+								"5a95033d-8b11-4507-94cc-0009c71bbf48",
+								"mock",
+								"pstmn",
+								"io"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Advance Demo",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://5a95033d-8b11-4507-94cc-0009c71bbf48.mock.pstmn.io",
+									"protocol": "https",
+									"host": [
+										"5a95033d-8b11-4507-94cc-0009c71bbf48",
+										"mock",
+										"pstmn",
+										"io"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 02 Aug 2022 03:42:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "x-srv-trace",
+									"value": "v=1;t=84a83a1fa4eaa722"
+								},
+								{
+									"key": "x-srv-span",
+									"value": "v=1;s=394852816b858d74"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "120"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "119"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1659411834"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a4-7hO0T/XLq3TuFViTu2ZVQQdIY+A\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"companyId\": 10101,\n    \"regionId\": 36554,\n    \"filters\": [\n        {\n            \"id\": 101,\n            \"name\": \"VENDOR\",\n            \"isAllowed\": false\n        },\n        {\n            \"id\": 102,\n            \"name\": \"COUNTRY\",\n            \"isAllowed\": true\n        },\n        {\n            \"id\": 103,\n            \"name\": \"MANUFACTURER\",\n            \"isAllowed\": false\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Demo Basic Expect",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Your test name\", function () {",
+									"    pm.expect(pm.response.text()).to.include('companyId');",
+									"    pm.expect(pm.response.json().regionId).to.eql(36554);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://5a95033d-8b11-4507-94cc-0009c71bbf48.mock.pstmn.io",
+							"protocol": "https",
+							"host": [
+								"5a95033d-8b11-4507-94cc-0009c71bbf48",
+								"mock",
+								"pstmn",
+								"io"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Advance Demo",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://5a95033d-8b11-4507-94cc-0009c71bbf48.mock.pstmn.io",
+									"protocol": "https",
+									"host": [
+										"5a95033d-8b11-4507-94cc-0009c71bbf48",
+										"mock",
+										"pstmn",
+										"io"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 02 Aug 2022 03:42:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "x-srv-trace",
+									"value": "v=1;t=84a83a1fa4eaa722"
+								},
+								{
+									"key": "x-srv-span",
+									"value": "v=1;s=394852816b858d74"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "120"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "119"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1659411834"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a4-7hO0T/XLq3TuFViTu2ZVQQdIY+A\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"companyId\": 10101,\n    \"regionId\": 36554,\n    \"filters\": [\n        {\n            \"id\": 101,\n            \"name\": \"VENDOR\",\n            \"isAllowed\": false\n        },\n        {\n            \"id\": 102,\n            \"name\": \"COUNTRY\",\n            \"isAllowed\": true\n        },\n        {\n            \"id\": 103,\n            \"name\": \"MANUFACTURER\",\n            \"isAllowed\": false\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "pm.sendRequest",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.sendRequest('https://httpbin.org/get', (error, response) => {",
+									"    if (error) throw new Error(error);",
+									"    console.log(response.json());",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://5a95033d-8b11-4507-94cc-0009c71bbf48.mock.pstmn.io",
+							"protocol": "https",
+							"host": [
+								"5a95033d-8b11-4507-94cc-0009c71bbf48",
+								"mock",
+								"pstmn",
+								"io"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Advance Demo",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://5a95033d-8b11-4507-94cc-0009c71bbf48.mock.pstmn.io",
+									"protocol": "https",
+									"host": [
+										"5a95033d-8b11-4507-94cc-0009c71bbf48",
+										"mock",
+										"pstmn",
+										"io"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 02 Aug 2022 03:42:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "x-srv-trace",
+									"value": "v=1;t=84a83a1fa4eaa722"
+								},
+								{
+									"key": "x-srv-span",
+									"value": "v=1;s=394852816b858d74"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "120"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "119"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1659411834"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a4-7hO0T/XLq3TuFViTu2ZVQQdIY+A\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"companyId\": 10101,\n    \"regionId\": 36554,\n    \"filters\": [\n        {\n            \"id\": 101,\n            \"name\": \"VENDOR\",\n            \"isAllowed\": false\n        },\n        {\n            \"id\": 102,\n            \"name\": \"COUNTRY\",\n            \"isAllowed\": true\n        },\n        {\n            \"id\": 103,\n            \"name\": \"MANUFACTURER\",\n            \"isAllowed\": false\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Workflows",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"postman.setNextRequest(\"Cheerio Demo\");",
+									"",
+									"//Stop executing requests / stop the collection run",
+									"",
+									"postman.setNextRequest(null);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://5a95033d-8b11-4507-94cc-0009c71bbf48.mock.pstmn.io",
+							"protocol": "https",
+							"host": [
+								"5a95033d-8b11-4507-94cc-0009c71bbf48",
+								"mock",
+								"pstmn",
+								"io"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Advance Demo",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://5a95033d-8b11-4507-94cc-0009c71bbf48.mock.pstmn.io",
+									"protocol": "https",
+									"host": [
+										"5a95033d-8b11-4507-94cc-0009c71bbf48",
+										"mock",
+										"pstmn",
+										"io"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 02 Aug 2022 03:42:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "x-srv-trace",
+									"value": "v=1;t=84a83a1fa4eaa722"
+								},
+								{
+									"key": "x-srv-span",
+									"value": "v=1;s=394852816b858d74"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "120"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "119"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1659411834"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a4-7hO0T/XLq3TuFViTu2ZVQQdIY+A\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"companyId\": 10101,\n    \"regionId\": 36554,\n    \"filters\": [\n        {\n            \"id\": 101,\n            \"name\": \"VENDOR\",\n            \"isAllowed\": false\n        },\n        {\n            \"id\": 102,\n            \"name\": \"COUNTRY\",\n            \"isAllowed\": true\n        },\n        {\n            \"id\": 103,\n            \"name\": \"MANUFACTURER\",\n            \"isAllowed\": false\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Failing tests",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Your test name failed\", function () {",
+									"",
+									"    pm.expect.fail('This failed because ...');",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://5a95033d-8b11-4507-94cc-0009c71bbf48.mock.pstmn.io",
+							"protocol": "https",
+							"host": [
+								"5a95033d-8b11-4507-94cc-0009c71bbf48",
+								"mock",
+								"pstmn",
+								"io"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Advance Demo",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://5a95033d-8b11-4507-94cc-0009c71bbf48.mock.pstmn.io",
+									"protocol": "https",
+									"host": [
+										"5a95033d-8b11-4507-94cc-0009c71bbf48",
+										"mock",
+										"pstmn",
+										"io"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 02 Aug 2022 03:42:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "x-srv-trace",
+									"value": "v=1;t=84a83a1fa4eaa722"
+								},
+								{
+									"key": "x-srv-span",
+									"value": "v=1;s=394852816b858d74"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "120"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "119"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1659411834"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a4-7hO0T/XLq3TuFViTu2ZVQQdIY+A\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"companyId\": 10101,\n    \"regionId\": 36554,\n    \"filters\": [\n        {\n            \"id\": 101,\n            \"name\": \"VENDOR\",\n            \"isAllowed\": false\n        },\n        {\n            \"id\": 102,\n            \"name\": \"COUNTRY\",\n            \"isAllowed\": true\n        },\n        {\n            \"id\": 103,\n            \"name\": \"MANUFACTURER\",\n            \"isAllowed\": false\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Node.js libraries",
+			"item": [
+				{
+					"name": "Cheerio Demo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var cheerio  = require(\"cheerio\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://thetestingacademy.com/",
+							"protocol": "http",
+							"host": [
+								"thetestingacademy",
+								"com"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crypto-js",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"console.log(CryptoJS.SHA256(\"some string\").toString());"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.thetestingacademy.com/s/store/courses/description/Automation-Tester-Blueprint",
+							"protocol": "https",
+							"host": [
+								"www",
+								"thetestingacademy",
+								"com"
+							],
+							"path": [
+								"s",
+								"store",
+								"courses",
+								"description",
+								"Automation-Tester-Blueprint"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Moment.js",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const moment = require('moment');",
+									"var mm = moment('2022-11-20').add(1, 'days').format('DD.MM.YYYY')",
+									"console.log(mm);",
+									"",
+									"var responseData = pm.response.json()[\"id\"];",
+									"",
+									"switch (id){",
+									"    case 1:",
+									"       postman.setNextRequest(\"PostRequest1\");",
+									"       break;",
+									"    case 3: ",
+									"      postman.setNextRequest(\"PostRequest3\");",
+									"    default:",
+									"    console.log(\"errr\");",
+									"    breal;  ",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const moment = require('moment');",
+									"var mm = moment('2022-09-25').add(1, 'days').format('DD.MM.YYYY')",
+									"console.log(mm);",
+									"pm.globals.set(\"tomData\",mm);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.thetestingacademy.com/s/store/courses/description/Automation-Tester-Blueprint",
+							"protocol": "https",
+							"host": [
+								"www",
+								"thetestingacademy",
+								"com"
+							],
+							"path": [
+								"s",
+								"store",
+								"courses",
+								"description",
+								"Automation-Tester-Blueprint"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch h3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var reponseData  = pm.response.text();",
+									"console.log(reponseData);",
+									"var parsedData = cheerio(pm.response.text());",
+									"console.log((parsedData.find(\"h3\")));"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.thetestingacademy.com/s/store/courses/description/Automation-Tester-Blueprint",
+							"protocol": "https",
+							"host": [
+								"www",
+								"thetestingacademy",
+								"com"
+							],
+							"path": [
+								"s",
+								"store",
+								"courses",
+								"description",
+								"Automation-Tester-Blueprint"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "csv parse",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.sendRequest(\"https://unpkg.com/papaparse@5.1.0/papaparse.min.js\", (error, response) => {",
+									"    if (error || response.code !== 200) {",
+									"        pm.expect.fail('Could not load external library');",
+									"    }",
+									"",
+									"    eval(response.text());",
+									"",
+									"    const csv = `id,name\\n1,John`;",
+									"    const data = this.Papa.parse(csv); // notice the this",
+									"    console.log(data);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://google.com",
+							"protocol": "https",
+							"host": [
+								"google",
+								"com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ChaJS",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify that Filters First Item Name is String\", function () {",
+									"   var expect = require('chai').expect;",
+									"   var assert = require('chai').assert;",
+									"   var should = require('chai').should;",
+									"   console.log(pm.response.json()[\"filters\"][0][\"name\"]);",
+									"   var nameOfFirstFilter = pm.response.json()[\"filters\"][0][\"name\"];",
+									"    assert.typeOf(nameOfFirstFilter,'string');",
+									"",
+									"",
+									"",
+									"",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://5a95033d-8b11-4507-94cc-0009c71bbf48.mock.pstmn.io",
+							"protocol": "https",
+							"host": [
+								"5a95033d-8b11-4507-94cc-0009c71bbf48",
+								"mock",
+								"pstmn",
+								"io"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Advance Demo",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://5a95033d-8b11-4507-94cc-0009c71bbf48.mock.pstmn.io",
+									"protocol": "https",
+									"host": [
+										"5a95033d-8b11-4507-94cc-0009c71bbf48",
+										"mock",
+										"pstmn",
+										"io"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 02 Aug 2022 03:42:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "x-srv-trace",
+									"value": "v=1;t=84a83a1fa4eaa722"
+								},
+								{
+									"key": "x-srv-span",
+									"value": "v=1;s=394852816b858d74"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "120"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "119"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1659411834"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a4-7hO0T/XLq3TuFViTu2ZVQQdIY+A\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"companyId\": 10101,\n    \"regionId\": 36554,\n    \"filters\": [\n        {\n            \"id\": 101,\n            \"name\": \"VENDOR\",\n            \"isAllowed\": false\n        },\n        {\n            \"id\": 102,\n            \"name\": \"COUNTRY\",\n            \"isAllowed\": true\n        },\n        {\n            \"id\": 103,\n            \"name\": \"MANUFACTURER\",\n            \"isAllowed\": false\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Visualize",
+			"item": [
+				{
+					"name": "https://postman-echo.com/post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `",
+									"    <table bgcolor=\"#FFFFFF\">",
+									"        <tr>",
+									"            <th>Label</th>",
+									"            <th>Data</th>",
+									"        </tr>",
+									"",
+									"        {{#each response}}",
+									"            <tr>",
+									"                <td>{{labels}}</td>",
+									"                <td>{{data}}</td>",
+									"            </tr>",
+									"        {{/each}}",
+									"    </table>",
+									"`;",
+									"",
+									"",
+									"pm.visualizer.set(template,{",
+									"    response: pm.response.json()",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"labels\": [\n\t\t\"IR\",\n\t\t\"TD\",\n\t\t\"KZ\",\n\t\t\"MW\",\n\t\t\"TF\"\n\t],\n\t\"data\": [\n\t\t736,\n\t\t466,\n\t\t759,\n\t\t603,\n\t\t588\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://postman-echo.com/post",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "JSON Schema",
+			"item": [
+				{
+					"name": "Test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var schema = {",
+									"    \"type\": \"object\",",
+									"    \"required\": [",
+									"        \"checked\",",
+									"        \"dimensions\",",
+									"        \"id\",",
+									"        \"name\",",
+									"        \"price\",",
+									"        \"tags\"",
+									"    ],",
+									"    \"additionalProperties\": false,",
+									"    \"properties\": {",
+									"        \"checked\": {",
+									"            \"type\": \"boolean\"",
+									"        },",
+									"        \"dimensions\": {",
+									"            \"type\": \"object\",",
+									"            \"required\": [",
+									"                \"width\",",
+									"                \"height\"",
+									"            ],",
+									"            \"additionalProperties\": true,",
+									"            \"properties\": {",
+									"                \"width\": {",
+									"                    \"type\": \"integer\"",
+									"                },",
+									"                \"height\": {",
+									"                    \"type\": \"integer\"",
+									"                }",
+									"            }",
+									"        },",
+									"        \"id\": {",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"name\": {",
+									"            \"type\": \"string\"",
+									"        },",
+									"        \"price\": {",
+									"            \"type\": \"number\"",
+									"        },",
+									"        \"tags\": {",
+									"            \"type\": \"array\",",
+									"            \"items\": {",
+									"                \"type\": \"string\"",
+									"            }",
+									"        }",
+									"    }",
+									"}",
+									"",
+									"",
+									"pm.test('Schema is valid', function () {",
+									"    pm.expect(tv4.validate(pm.response.json(), schema)).to.be.true;",
+									"});",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mocki.io/v1/4380a929-40a5-4e1f-b305-8c580bb6e45e",
+							"protocol": "https",
+							"host": [
+								"mocki",
+								"io"
+							],
+							"path": [
+								"v1",
+								"4380a929-40a5-4e1f-b305-8c580bb6e45e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify static fields\",function(){",
+							"",
+							"        var jsonData = pm.response.json();",
+							"        pm.expect(jsonData).to.have.property(\"uid\");",
+							"        pm.expect(jsonData).to.have.property(\"pid\");",
+							"",
+							"        pm.expect(jsonData[\"firstName\"]).to.eql(\"Jane\");",
+							"",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mocki.io/v1/bc6bea88-fe71-48da-ad73-1e63a7e32875",
+					"protocol": "https",
+					"host": [
+						"mocki",
+						"io"
+					],
+					"path": [
+						"v1",
+						"bc6bea88-fe71-48da-ad73-1e63a7e32875"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
